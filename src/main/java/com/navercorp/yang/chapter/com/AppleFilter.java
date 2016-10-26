@@ -3,6 +3,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+/**
+ * 사과 선별 서비스
+ * @author Naver
+ *
+ */
 public class AppleFilter {
 
 	public static List<Apple> filterGreenApples(List<Apple> inventory) {

@@ -1,7 +1,7 @@
 package com.navercorp.yang.chapter.com;
 
 /**
- * 
+ * 사과 정보 객체
  * @author Naver
  *
  */
