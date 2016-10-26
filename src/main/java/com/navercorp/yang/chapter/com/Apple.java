@@ -1,5 +1,10 @@
 package com.navercorp.yang.chapter.com;
 
+/**
+ * 
+ * @author Naver
+ *
+ */
 public class Apple {
 	private String color;
 	private int weight;
