@@ -37,7 +37,7 @@ public class AppleFilterTest {
 	}
 
 	@Test
-	public void testMethodReferance() {
+	public void testMethodReference() {
 		List<Apple> resultGreen = AppleFilter.filterApples(inventory, Apple::isGreenApple);
 		assertEquals(3, resultGreen.size());
 
