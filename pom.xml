@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  	<modelVersion>4.0.0</modelVersion>
+  	<groupId>java8study</groupId>
+  	<artifactId>java8study</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  
+  	<properties>
+		<java-version>1.8</java-version>
+		<source-encoding>UTF-8</source-encoding>
+		<project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>utf-8</project.reporting.outputEncoding>
+  	</properties>
+  
+  	<repositories>
+		<repository>
+			<id>central</id>
+		    <name>Maven Repository Switchboard</name>
+		    <layout>default</layout>
+		    <url>http://repo1.maven.org/maven2</url>
+		    <snapshots>
+		      <enabled>false</enabled>
+		    </snapshots>
+	    </repository>
+		<repository>
+			<id>nhn.release.repository</id>
+			<url>http://repo.nhncorp.com/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>nhn.snapshot.repository</id>
+			<url>http://repo.nhncorp.com/m2-snapshot-repository</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>svn.home.nhncorp.com-snapshots</id>
+			<name>svn.home.nhncorp.com-snapshots</name>
+			<url>http://svn.home.nhncorp.com/maven/content/repositories/libs-snapshots-local</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>svn.home.nhncorp.com-releases</id>
+			<name>svn.home.nhncorp.com-releases</name>
+			<url>http://svn.home.nhncorp.com/maven/content/repositories/libs-releases-local</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
+	
+  	<dependencies>
+  		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit-dep</artifactId>
+		    <version>4.11</version>
+		</dependency>
+		<dependency>
+    		<groupId>org.mockito</groupId>
+    		<artifactId>mockito-core</artifactId>
+    		<version>1.10.19</version>
+    		<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+</project>
