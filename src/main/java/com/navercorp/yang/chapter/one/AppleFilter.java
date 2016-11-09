@@ -1,4 +1,4 @@
-package com.navercorp.yang.chapter.com;
+package com.navercorp.yang.chapter.one;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;

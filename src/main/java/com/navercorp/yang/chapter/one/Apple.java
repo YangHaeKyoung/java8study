@@ -1,4 +1,7 @@
-package com.navercorp.yang.chapter.com;
+package com.navercorp.yang.chapter.one;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * 사과 정보 객체
@@ -28,5 +31,18 @@ public class Apple {
 	
 	public boolean isHeavyApple() {
 		return 150 < getWeight();
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString();
+	}
+	
+	public String toStringSimple() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.SIMPLE_STYLE);
+	}
+	
+	public String toStringMultiLine() {
+		return ToStringBuilder.reflectionToString(this, ToStringStyle.MULTI_LINE_STYLE);
 	}
 }
