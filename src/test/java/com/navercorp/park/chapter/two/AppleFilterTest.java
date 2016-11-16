@@ -24,11 +24,12 @@ public class AppleFilterTest {
 	@Test
 	public void testFillterGreenAppples() {
 		
-		List<Apple> inventory = AppleFilterTest.returnAppleListByColor(new String[]{"green","green","red","green","green","blue","green","green","black","yellow","green","green","green","green"});
-		List<Apple> appleResultList = AppleFilterTest.returnAppleListByColor(new String[]{"green","green","green","green","green","green","green","green","green","green"});
+		List<Apple> inventory = AppleFilterTest.returnAppleListByColor(new String[]{"green","green","red","green","green","blue","green","green","black","yellow","green","green","green","green"});		
 		List<Apple> resultList = AppleFilter.fillterGreenAppples(inventory);
 		
-		Assert.assertArrayEquals(resultList.toArray(), appleResultList.toArray());
+		Assert.assertEquals("결과가 다르네용!!", 9, resultList.size());
+		Assert.assertEquals("결과가 다르네용!!", 10, resultList.size());
+		
 		//assetEquals
 		//assetArrayEqulas
 		//assetSame()//동일 객체 확인
