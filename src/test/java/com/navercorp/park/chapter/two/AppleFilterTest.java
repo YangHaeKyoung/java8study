@@ -27,14 +27,14 @@ public class AppleFilterTest {
 		List<Apple> inventory = AppleFilterTest.returnAppleListByColor(new String[]{"green","green","red","green","green","blue","green","green","black","yellow","green","green","green","green"});		
 		List<Apple> resultList = AppleFilter.fillterGreenAppples(inventory);
 		
-		Assert.assertEquals("결과가 다르네용!!", 9, resultList.size());
-		Assert.assertEquals("결과가 다르네용!!", 10, resultList.size());
+		//Assert.assertEquals("결과가 다르네용!!", 9, resultList.size());
+		//Assert.assertEquals("결과가 다르네용!!", 10, resultList.size());
 		
-		//assetEquals
-		//assetArrayEqulas
-		//assetSame()//동일 객체 확인
-		//assetTrue(a)
-		//assetNotNull(a)
+		List<Apple> weightAppleList = AppleFilterTest.returnAppleListByWeight(new int[]{100,90,80,1,200,300,400,100});
+		AppleFilter.prettyPringApples(weightAppleList, new AppleWeigthFormatter());
+		
+		System.out.println("======================");
+		AppleFilter.prettyPringApples(weightAppleList, new AppleFancyFormatter());
 	}
 	
 	static List<Apple> returnAppleListByColor(String[] colorArry){
@@ -47,6 +47,17 @@ public class AppleFilterTest {
 		return list;
 		
 	}	
+	static List<Apple> returnAppleListByWeight(int[] weightArray){
+		List<Apple> list = new ArrayList<Apple>();
+		for( int weight : weightArray){
+			Apple e = new Apple();
+			e.setWeight(weight);
+			list.add(e);
+		}
+		return list;
+		
+	}	
+	
 	//객체초기화 하는 작업
 	//@Before 
 	

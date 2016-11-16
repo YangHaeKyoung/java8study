@@ -55,5 +55,10 @@ public class AppleFilter {
 		}
 		return result;
 	}
+	public static void prettyPringApples(List<Apple> inventory , AppleFormatter formetter){
+		for(Apple apple : inventory){
+			System.out.println(formetter.accept(apple));
+		}
+	}
 	
 }
