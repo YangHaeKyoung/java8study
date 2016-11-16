@@ -53,7 +53,13 @@ public class AppleFilterTest {
 					}
 				}
 		});
+		System.out.println("============================================");
+		System.out.println("============================================");
 		//람다 표현식으로 바꾸기 
+		AppleFilter.prettyPringApples(weightAppleList, (Apple e) -> "This apple is " + e.getWeight() +" kg." );
+		System.out.println("======================");
+		AppleFilter.prettyPringApples(weightAppleList,(Apple e) -> (  e.getWeight() > 100 ? "This apple is heavy." : "This apple is light." ));
+
 	}
 	
 	static List<Apple> returnAppleListByColor(String[] colorArry){
