@@ -10,7 +10,6 @@ package com.navercorp.park.chapter.two;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -35,6 +34,26 @@ public class AppleFilterTest {
 		
 		System.out.println("======================");
 		AppleFilter.prettyPringApples(weightAppleList, new AppleFancyFormatter());
+		System.out.println("============================================");
+		System.out.println("============================================");
+		
+		//익명클래스 사용
+		AppleFilter.prettyPringApples(weightAppleList, new AppleFormatter(){
+			public String accept(Apple e){
+				return "This apple is " + e.getWeight() +" kg.";
+			}
+		});
+		System.out.println("======================");
+		AppleFilter.prettyPringApples(weightAppleList, new AppleFormatter(){
+				public String accept(Apple e){
+					if( e.getWeight() > 100 ){
+						return "This apple is heavy.";
+					}else{
+						return "This apple is light.";
+					}
+				}
+		});
+		//람다 표현식으로 바꾸기 
 	}
 	
 	static List<Apple> returnAppleListByColor(String[] colorArry){
