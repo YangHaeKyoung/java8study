@@ -59,7 +59,12 @@ public class AppleFilterTest {
 		AppleFilter.prettyPringApples(weightAppleList, (Apple e) -> "This apple is " + e.getWeight() +" kg." );
 		System.out.println("======================");
 		AppleFilter.prettyPringApples(weightAppleList,(Apple e) -> (  e.getWeight() > 100 ? "This apple is heavy." : "This apple is light." ));
-
+		
+		
+		System.out.println("============================================");
+		System.out.println("============================================");
+		List<Apple>  filterList = Filter.filter(AppleFilterTest.returnAppleListByColor(new String[]{"green","green","red","green","green","blue","green","green","black","yellow","green","green","green","green"}), (Apple e)-> "green".equals(e.getColor()) );
+		AppleFilter.prettyPringApples(filterList, (Apple e) -> "This apple is " + e.getColor()  );
 	}
 	
 	static List<Apple> returnAppleListByColor(String[] colorArry){
