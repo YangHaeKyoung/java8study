@@ -32,6 +32,9 @@ public class ProcessFileTest {
 		//람다를 이용
 		System.out.println(ProcessFile.processfile( (BufferedReader br)-> { return br.readLine() +"\n"+ br.readLine() ;} ));		
 		System.out.println("===========================================================");
+		//메소드 레퍼런스 : 하나의 메소드만 사용하는 람다의 축약형
+		System.out.println(ProcessFile.processfile( BufferedReader::readLine));		
+		System.out.println("===========================================================");
 		
 		//fail("Not yet implemented");
 	}
