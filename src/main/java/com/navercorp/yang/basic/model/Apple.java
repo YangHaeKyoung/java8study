@@ -1,13 +1,15 @@
-package com.navercorp.yang.chapter.one;
+package com.navercorp.yang.basic.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.apache.ibatis.type.Alias;
 
 /**
  * 사과 정보 객체
  * @author Naver
  *
  */
+@Alias("apple")
 public class Apple {
 	private String color;
 	private int weight;

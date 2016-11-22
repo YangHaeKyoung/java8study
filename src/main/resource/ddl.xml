@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE database SYSTEM "http://db.apache.org/torque/dtd/database.dtd">
+ 
+<database name="testdb">
+ 
+    <table name="apple">
+        <column name="weight" type="DECIMAL" size="10" />
+        <column name="color" type="VARCHAR" size="100"/>
+    </table>
+ 
+</database>

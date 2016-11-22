@@ -3,13 +3,16 @@ package com.navercorp.yang.chapter.two;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.navercorp.yang.chapter.one.Apple;
+import com.navercorp.yang.basic.model.Apple;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:applicationContext.xml")
 public class ApplePrintTest {
 	private static List<Apple> inventory;
 
@@ -26,14 +29,10 @@ public class ApplePrintTest {
 	
 	@Test
 	public void test() {
-		ApplePrint.prettyPrintApple(inventory, Apple::toString);
-		ApplePrint.prettyPrintApple(inventory, Apple::toStringSimple);
-		ApplePrint.prettyPrintApple(inventory, Apple::toStringMultiLine);
 		
-		ApplePrint.prettyPrintApple(inventory, (Apple a) -> ToStringBuilder.reflectionToString(a, ToStringStyle.NO_FIELD_NAMES_STYLE));
-		ApplePrint.prettyPrintApple(inventory, (Apple a) -> ToStringBuilder.reflectionToString(a, ToStringStyle.SHORT_PREFIX_STYLE));
+		ApplePrint.prettyPrintApple(inventory, new AppleFancyFormatter());
 	}
-
+	
 	private static Apple getApple(String color, int weight) {
 		Apple apple = new Apple();
 		apple.setColor(color);

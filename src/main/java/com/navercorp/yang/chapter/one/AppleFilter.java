@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+import com.navercorp.yang.basic.model.Apple;
+
 /**
  * 사과 선별 서비스
  * @author Naver

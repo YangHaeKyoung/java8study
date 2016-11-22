@@ -9,6 +9,8 @@ import java.util.stream.Collectors;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import com.navercorp.yang.basic.model.Apple;
+
 public class AppleFilterTest {
 
 	private static List<Apple> inventory;
