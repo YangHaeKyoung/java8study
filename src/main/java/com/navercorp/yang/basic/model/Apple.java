@@ -6,7 +6,7 @@ import org.apache.ibatis.type.Alias;
 
 /**
  * 사과 정보 객체
- * @author Naver
+ * @author hkyang
  *
  */
 @Alias("apple")
