@@ -16,10 +16,19 @@ import java.sql.SQLException;
  * @author Naver
  */
 public abstract class UserDao {
+	private SimpleConnectionMaker simpleConnectionMaker;
+	
+	public UserDao(){
+		simpleConnectionMaker = new SimpleConnectionMaker();
+	}
+	
 	public void add(User user) throws ClassNotFoundException , SQLException{
 		//Class.forName("com.mysql.jdbc.Driver");
 		//Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
-		Connection c  = getConnection();
+		
+		//Connection c  = getConnection();
+		
+		Connection c  = simpleConnectionMaker.getConnection();
 		
 		PreparedStatement ps = c.prepareStatement("insert into users(id, name,password , resultSetType, resultSetConcurrency) values (?,?,?) ");
 		ps.setString(1, user.getId());
@@ -34,7 +43,9 @@ public abstract class UserDao {
 		//Class.forName("com.mysql.jdbc.Driver");
 		//Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
 		
-		Connection c  = getConnection();
+		//Connection c  = getConnection();
+		
+		Connection c  = simpleConnectionMaker.getConnection();
 		
 		PreparedStatement ps = c.prepareStatement("select * from users where id =? ");
 		ps.setString(1, id);
