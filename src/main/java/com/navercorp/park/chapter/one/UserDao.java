@@ -8,7 +8,6 @@
 package com.navercorp.park.chapter.one;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -16,10 +15,11 @@ import java.sql.SQLException;
 /**
  * @author Naver
  */
-public class UserDao {
+public abstract class UserDao {
 	public void add(User user) throws ClassNotFoundException , SQLException{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
+		//Class.forName("com.mysql.jdbc.Driver");
+		//Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
+		Connection c  = getConnection();
 		
 		PreparedStatement ps = c.prepareStatement("insert into users(id, name,password , resultSetType, resultSetConcurrency) values (?,?,?) ");
 		ps.setString(1, user.getId());
@@ -31,8 +31,10 @@ public class UserDao {
 	}
 	
 	public User get(String id) throws ClassNotFoundException , SQLException{
-		Class.forName("com.mysql.jdbc.Driver");
-		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
+		//Class.forName("com.mysql.jdbc.Driver");
+		//Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
+		
+		Connection c  = getConnection();
 		
 		PreparedStatement ps = c.prepareStatement("select * from users where id =? ");
 		ps.setString(1, id);
@@ -51,7 +53,17 @@ public class UserDao {
 		
 		return user;
 	}
+	/*
+	private Connection getConnection() throws ClassNotFoundException , SQLException{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
+		return c;
+		
+	}*/
 	
+	public abstract Connection getConnection() throws ClassNotFoundException , SQLException;
+	
+	/*
 	public static void main(String[]  args) throws ClassNotFoundException , SQLException{
 		UserDao dao = new UserDao();
 		
@@ -69,6 +81,6 @@ public class UserDao {
 		System.out.println(user2.getPassword());
 		
 		System.out.println(user2.getId() +"조회 성공");
-	}
+	}*/
 	
 }
