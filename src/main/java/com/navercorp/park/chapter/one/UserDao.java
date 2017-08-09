@@ -16,10 +16,10 @@ import java.sql.SQLException;
  * @author Naver
  */
 public abstract class UserDao {
-	private SimpleConnectionMaker simpleConnectionMaker;
+	private ConnectionMaker connectionMaker;
 	
 	public UserDao(){
-		simpleConnectionMaker = new SimpleConnectionMaker();
+		connectionMaker = new SimpleConnectionMaker();
 	}
 	
 	public void add(User user) throws ClassNotFoundException , SQLException{
@@ -28,7 +28,7 @@ public abstract class UserDao {
 		
 		//Connection c  = getConnection();
 		
-		Connection c  = simpleConnectionMaker.getConnection();
+		Connection c  = connectionMaker.makeConnection();
 		
 		PreparedStatement ps = c.prepareStatement("insert into users(id, name,password , resultSetType, resultSetConcurrency) values (?,?,?) ");
 		ps.setString(1, user.getId());
@@ -45,7 +45,7 @@ public abstract class UserDao {
 		
 		//Connection c  = getConnection();
 		
-		Connection c  = simpleConnectionMaker.getConnection();
+		Connection c  = connectionMaker.makeConnection();
 		
 		PreparedStatement ps = c.prepareStatement("select * from users where id =? ");
 		ps.setString(1, id);

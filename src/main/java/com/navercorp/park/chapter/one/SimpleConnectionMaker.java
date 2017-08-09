@@ -14,8 +14,8 @@ import java.sql.SQLException;
 /**
  * @author Naver
  */
-public class SimpleConnectionMaker {
-	public Connection getConnection() throws ClassNotFoundException , SQLException{
+public class SimpleConnectionMaker implements ConnectionMaker{
+	public Connection makeConnection() throws ClassNotFoundException , SQLException{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection c = DriverManager.getConnection("jdbc:mysql://localhost/springbook" , "spring","book");
 		return c;
