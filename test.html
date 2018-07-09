@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" charset="utf-8">
+<title>구성원 주간 근무시간 현황 안내</title>
+</head>
+<body style="margin:0;padding:0">
+	<div style="overflow:hidden;position:relative;width:740px;border:1px solid #FFF;font-family:'나눔고딕',NanumGothic;font-size:13px;text-align:left;-webkit-text-size-adjust:none">
+		<div style="background:url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_top.gif) repeat-x;height:85px;overflow:hidden"><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/notice.gif" width="650" height="85" alt="" style="vertical-align:top;float:left"></div>
+		<table cellspacing="0" border="0" cellpadding="0" style="width:100%;border-collapse:collapse;font-size:13px;color:#666;text-align:left;table-layout:fixed">
+			<colgroup><col style="width:60px"><col><col style="width:60px"></colgroup>
+			<tr>
+				<td style="background:url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_line.gif) repeat-y;vertical-align:top">
+					<div style="width:60xp"><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_l.gif" width="60" height="347" alt="" style="vertical-align:top"></div>
+				</td>
+				<td style="vertical-align:top">
+					<div>
+						<div style="margin:0;padding:0;text-align:center">
+							<div style="height:18px;background:#ededed;overflow:hidden"><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_tb_top.gif" width="480" height="36" alt="" style="vertical-align:top;float:left"></div>
+							<h1 style="display:inline-block;*display:inline;*zoom:1;font-size:24px;font-weight:600;color:#2db400;background:url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/hd_bg.gif) repeat-x 0 100%;padding:0 0 3px;text-align:center;margin:36px 0 32px;line-height:34px">$ev.title$ $ev.empNo$</h1>
+						</div>
+                                                
+                                                <div style="font-size:13px;color:#252525;margin-top:0px">산하 조직 구성원의 이번 주 근무시간을 아래와 같이 안내 드립니다.</div>  
+		                               <div style="font-size:13px;color:#252525;margin-top:0px">과다근무가 우려되니 구성원 근무시간 관리에 참고해 주세요.</div>
+
+                                                <div style="font-size:13px;color:#252525;margin-top:17px">* 근무기간 : $ev.period$</div>
+						<div style="border:1px solid #c2c2c2;margin-top:5px">
+							<table cellspacing="0" border="0" cellpadding="0" style="width:100%;border-collapse:collapse;font-size:12px;color:#666;text-align:left;table-layout:fixed">
+								<colgroup>
+                                                                        <col style="width:140px"/>
+									<col style="width:110px"/>
+									<col style="width:190px"/>
+									<col style="width:100px"/>
+                                                                        <col/>
+								</colgroup>
+								<tr>
+									<th scope="row" style="height:40px;border-bottom:1px solid #c2c2c2;border-right:1px solid #c2c2c2;background-color:#ededed"><span style="display:block;margin:0;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">구분</span></th>
+                                                                        <th scope="row" style="height:40px;border-bottom:1px solid #c2c2c2;border-right:1px solid #c2c2c2;background-color:#ededed"><span style="display:block;margin:0;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">성명</span></th> 									
+									<th scope="row" style="height:40px;border-bottom:1px solid #c2c2c2;border-right:1px solid #c2c2c2;background-color:#ededed"><span style="display:block;margin:0;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">부서</span></th>
+									<th scope="row" style="height:40px;border-bottom:1px solid #c2c2c2;border-right:1px solid #c2c2c2;background-color:#ededed"><span style="display:block;margin:0;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">누적근무시간</span></th>
+                                                                        <th scope="row" style="height:40px;border-bottom:1px solid #c2c2c2;border-right:0px solid #c2c2c2;background-color:#ededed"><span style="display:block;margin:0;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">상세보기</span></th>
+								</tr>									
+							$if(ev.tableBodys)$ 
+							  $ev.tableBodys:{it|
+								<tr>
+
+                                                                        $if( it.overtimedegreegroup1st)$
+                                                                              $if( ev.isNBYn)$       
+                                                                                   $if(  it.overtime52yn)$       
+                                                                                       <td  rowspan=$it.overtimedegreegroupcnt$  style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.overtimedegreetext$</span></td>
+                                                                                         <td colspan="4" style="height:40px;border-right:0px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:3px 3px 3px 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#ff0000;text-align:left;font-weight:600">월 기준 초과근무시간을 넘어서는 근무는 불가하며, <br>
+   특정 주 52시간을 초과한 사유와 근무시간 감축 계획을 Management Support로<BR> 
+   보내주시기 바랍니다.</span></td></tr><tr>   
+                                                                                    $else$
+                                                                                      <td  rowspan=$it.overtimedegreegroupcnt$  style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.overtimedegreetext$</span></td>
+                                                                                    $endif$      
+                                                                              $else$
+                                                                                <td  rowspan=$it.overtimedegreegroupcnt$  style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.overtimedegreetext$</span></td>
+                                                                               $endif$
+                                                                         $endif$
+
+                                                                        <td style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.empnm$</span></td>  
+									<td style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.orgnm$</span></td>
+									<td style="height:40px;border-right:1px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600">$it.totworkhm$<br>$it.end_ymd$</span></td>
+                                                                          <td style="height:40px;border-right:0px solid #c2c2c2;border-bottom:1px solid #c2c2c2"><span style="display:block;margin:0 3px;font-family:'나눔고딕',NanumGothic;font-size:12px;color:#252525;text-align:center;font-weight:600"><a href="$ev.linkEach$&com_org_cd=$it.comorgcd$&emp_id=$it.encempid$" target ="blank_">[보기]</a></span></td>
+                                                              </tr>
+
+
+							  };separator="\n"$
+							
+							$endif$
+							</table>
+						</div>
+<br>			
+
+
+
+
+
+					</div>
+
+				</td>
+				<td style="background:url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_line.gif) repeat-y 100% 0;vertical-align:top">
+					<div style="width:60xp"><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_r.gif" width="60" height="347" alt="" style="vertical-align:top"></div>
+				</td>
+			</tr>
+			<tr>
+				<td><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_l2.gif" width="60" height="19" alt="" style="vertical-align:top"></td>
+				<td></td>
+				<td><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_r2.gif" width="60" height="19" alt="" style="vertical-align:top"></td>
+			</tr>
+			<tr>
+				<td><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_l3.gif" width="60" height="111" alt="" style="vertical-align:top"></td>
+<td style="background:#ededed url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_btm.gif) no-repeat 100% 0;height:30px;line-height:30px;text-align:center">
+					<a href="$ev.link$" target ="blank_" style="display:inline-block;*display:inline;*zoom:1;text-decoration:none;line-height:30px;height:30px;color:#FFF;font-weight:600;cursor:pointer"><span style="display:inline-block;*display:inline;*zoom:1;font-size:14px;padding:0 8px 0 20px;background-color:#47ad33;vertical-align:middle">근무시간현황 상세 확인</span><em style="display:inline-block;*display:inline;*zoom:1;background:url(http://static.nhncorp.com/static/site/hrlove/naver/img/mail/btn_bgl2.gif) 100% 0 no-repeat;width:13px;height:30px;vertical-align:middle"></em>
+					</a>
+				<td><img src="http://static.nhncorp.com/static/site/hrlove/naver/img/mail/bg_r3.gif" width="60" height="111" alt="" style="vertical-align:top"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
