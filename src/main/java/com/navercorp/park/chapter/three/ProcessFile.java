@@ -30,4 +30,18 @@ public class ProcessFile {
 		}
 		
 	}
+	public static void main(String[] args){
+		//int coin = (int) Math.ceil( 74194/1000 ) * 1000;
+		//int coin = (int) Math.ceil(  (float) 74194/1000  )*1000;
+		int coin = (int) Math.ceil(  74194f/1000  )*1000;
+		System.out.println("coin===" + coin);
+		
+		System.out.println("coin===" + Math.ceil( (float) (74194/1000) ) * 1000 );
+		System.out.println("coin===" + Math.ceil( 74194/100 )*100  );
+		System.out.println("coin===" + Math.ceil( 74194/1000)  );
+		System.out.println("coin===" +(  (float) 74194/1000  ));
+		System.out.println("coin===" +Math.ceil(  (float) 74194/1000  )*1000);
+		
+	}
+	
 }

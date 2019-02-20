@@ -28,7 +28,8 @@ public class Convert {
 	
 	private static byte[] cryptAesOutsystemKey;	
 	
-	private static String keyName = "outsysteminterfa";	
+	private static String keyName = "outsysteminterfa";	//개발
+	//private static String keyName = "outsystemIF!@#$%";//운영
 
 
 	public Convert() {
@@ -47,11 +48,21 @@ public class Convert {
 		 cryptAesOutsystemKey = keyName.getBytes();
 		 Convert f = new Convert(); 
 		 
-		 String testResult = f.encryptMsgAES("test");
+		 String testResult = f.encryptMsgAES("NB11657");
 		  
 		  System.out.println("1:" +testResult);
 		  
 		  System.out.println("2:" +f.decryptMsgAES(testResult));
+		  
+		  
+		  
+		  String testResult2 = f.encryptMsgAES("dev-nb11657@navercorp.com");
+		  
+		  System.out.println("3:" +testResult2);
+		  
+		  System.out.println("4:" +f.decryptMsgAES(testResult2));
+		 
+		  
 		  
 		 }
 
@@ -80,9 +91,7 @@ public class Convert {
 				AESCipher cipher = new AESCipher(key);
 				byte[] msgBytes = (charset == null) ? msg.getBytes() : msg.getBytes(charset);
 				byte[] encryptedMsg = cipher.encrypt(msgBytes);
-
-			
-				retMessage = new String(Base64WithUrlNFileNameSafe.encode(encryptedMsg));
+				retMessage = byteArrayToHex(encryptedMsg);
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -91,6 +100,27 @@ public class Convert {
 			return retMessage;
 		}
 
+		/**
+		 * byte[]를 16진수 문자열로 변환
+		 *
+		 * @param ba byte array
+		 * @return 16진수 문자열
+		 */
+		private static String byteArrayToHex(byte[] ba) {
+			if (ba == null || ba.length == 0) {
+				return null;
+			}
+
+			StringBuffer sb = new StringBuffer(ba.length * 2);
+			String hexNumber;
+
+			for (int x = 0; x < ba.length; x++) {
+				hexNumber = "0" + Integer.toHexString(0xff & ba[x]);
+				sb.append(hexNumber.substring(hexNumber.length() - 2));
+			}
+
+			return sb.toString();
+		}
 		/**
 		 * 인사시스템 공통 복호화 처리
 		 * @param key
@@ -109,11 +139,7 @@ public class Convert {
 				if (charset == null) {
 					charset = StandardCharsets.UTF_8;
 				}
-
-				
-				byte[] msgBytes = (charset == null) ? msg.getBytes() : msg.getBytes(charset);
-				byte[] decodedMsg = Base64WithUrlNFileNameSafe.decode(msgBytes);
-				byte[] decryptedMsg = cipher.decrypt(decodedMsg);
+				byte[] decryptedMsg = cipher.decrypt(hexToByteArray(msg));
 				if (charset == null) {
 					retMessage = new String(decryptedMsg);
 				} else {
@@ -127,7 +153,27 @@ public class Convert {
 			}
 			return retMessage;
 		}
+		
+		
+	/**
+	 * 16진수 문자열을 byte[]로 변환
+	 *
+	 * @param hex 16진수 문자열
+	 * @return byte array
+	 */
+	private static byte[] hexToByteArray(String hex) {
+		if (hex == null || hex.length() == 0) {
+			return null;
+		}
 
+		byte[] ba = new byte[hex.length() / 2];
+
+		for (int i = 0; i < ba.length; i++) {
+			ba[i] = (byte) Integer.parseInt(hex.substring(2 * i, 2 * i + 2), 16);
+		}
+
+		return ba;
+	}
 
 
 	/**
